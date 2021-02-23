@@ -1,0 +1,16 @@
+.nav {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 1.5em;
+  
+}
+.title {
+  font-family: 'bungee', sans-serif;
+  font-size: 36px;
+}

@@ -1,0 +1,11 @@
+.head {
+  color: #ffffff;
+  background-color: #b58b00c0;
+  background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
