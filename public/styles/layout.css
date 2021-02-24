@@ -24,13 +24,59 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+
+
 .container {
+  position: relative; top: 120px;
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
+  flex-direction:column;
   justify-content: center;
   padding-left: 5%;
   padding-right: 5%;
- }
+}
 
+.article-tweet {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* border:dimgrey; */
+  border-width: 2px;
+  margin-top: 10%;
+  border:3px;
+  border-style: solid;
+}
 
- 
+.article-tweet header {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-tweet header div {
+  display: flex;
+  align-items: center;
+}
+
+.article-tweet p {
+  width: 95%;
+}
+.article-tweet footer {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 5px solid dimgrey;
+  margin: 0 3rem;
+}
+
+.article-tweet:hover {
+  box-shadow: 0 0 11px grey; 
+}
+
+.article-tweet:hover a {
+  opacity: 1;
+}
+.article-tweet a {
+  align-self: center;
+  opacity: 0;
+}

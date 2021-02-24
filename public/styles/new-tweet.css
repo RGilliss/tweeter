@@ -1,7 +1,7 @@
 .new-tweet {
   display:flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   font-family: 'bungee';
 }
@@ -28,7 +28,7 @@
 #tweet-text {
   color: dimgrey;
   background-color: blanchedalmond;
-  width: 50em;
+  width: 100%;
   border: none;
   border-bottom: 5px solid dimgray;
   font-family: 'Source Sans Pro', sans-serif;
