@@ -42,44 +42,48 @@ const loadTweets = function() {
   });
 };
 
+//Submits the tweet if it meets the character count criteria
+const submitTweet = function () {
+  $("#new-tweet-form").submit(function(event) {
+  const $userTweet = $("#tweet-text")
+  let submission = $('#new-tweet-form').find('textarea').val();
+
+  event.preventDefault();
+  if ($userTweet.val().length > 140) {
+    event.preventDefault();
+    error.textContent="Your tweet is too long";
+    error.style.display = "block";
+  }
+  if ($userTweet.val().length === 0) {
+    event.preventDefault();
+    error.textContent="You should type something first";
+    error.style.display = "block";
+  }
+  if ($userTweet.val().length <= 140 && $userTweet.val().length > 0) {
+    error.style.display = "none";
+    $.ajax({
+    url: "/tweets",
+    method: "POST",
+    data: {text: submission},
+    dataType: "text"
+    }).then(() => {
+      loadTweets();
+      error.style.display = "none";
+    }).catch(err => {
+      console.log('ERR caught in AJAX POST: ', err);
+    })
+  }
+});
+}
+
 
 $(document).ready(function() {
   loadTweets();
   //error message
   const error = document.getElementById('error')
   error.style.display = "none";
+  submitTweet();
   
-  $("#new-tweet-form").submit(function(event) {
-    const $userTweet = $("#tweet-text")
-    let submission = $('#new-tweet-form').serialize();
-    
-    event.preventDefault();
-    if ($userTweet.val().length > 140) {
-      event.preventDefault();
-      error.textContent="Your tweet is too long";
-      error.style.display = "block";
-    }
-    if ($userTweet.val().length === 0) {
-      event.preventDefault();
-      error.textContent="You should type something first";
-      error.style.display = "block";
-    }
-    if ($userTweet.val().length <= 140 && $userTweet.val().length > 0) {
-      console.log(submission);
-      error.style.display = "none";
-      $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: {text: submission},
-      dataType: "text"
-      }).then(() => {
-        loadTweets();
-        error.style.display = "none";
-      }).catch(err => {
-        console.log('ERR caught in AJAX POST: ', err);
-      })
-    }
-});
 });  
 
 

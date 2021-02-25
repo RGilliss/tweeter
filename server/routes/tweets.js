@@ -45,7 +45,6 @@ module.exports = function(DataHelpers) {
   });
   
 
-
-  return tweetsRoutes;
+return tweetsRoutes;
 
 }
