@@ -53,15 +53,12 @@ const submitTweet = function () {
   $("#new-tweet-form").submit(function(event) {
   const $userTweet = $("#tweet-text")
   let submission = $('#new-tweet-form').find('textarea').val();
-
   event.preventDefault();
   if ($userTweet.val().length > 140) {
-    event.preventDefault();
     error.textContent="Your tweet is too long";
     error.style.display = "block";
   }
   if ($userTweet.val().length === 0) {
-    event.preventDefault();
     error.textContent="You should type something first";
     error.style.display = "block";
   }
@@ -73,6 +70,7 @@ const submitTweet = function () {
     data: {text: submission},
     dataType: "text"
     }).then(() => {
+      $('#new-tweet-form').trigger("reset");
       loadTweets();
       error.style.display = "none";
     }).catch(err => {
