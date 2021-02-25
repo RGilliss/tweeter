@@ -34,3 +34,9 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
 }
+
+.new-tweet small {
+  /* visibility: hidden; */
+  background-color: red;
+  color: white;
+}

@@ -40,7 +40,6 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* border:dimgrey; */
   border-width: 2px;
   margin-top: 10%;
   border:3px;
@@ -80,3 +79,4 @@ body {
   align-self: center;
   opacity: 0;
 }
+
