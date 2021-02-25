@@ -4,21 +4,6 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-const parser = function (tweet) {
-  let parsedTweet = tweet.slice(6);
-  parsedTweet = parsedTweet.split('');
-  parsedTweet.forEach(val => {
-    if (val === '%') {
-      let location = parsedTweet.indexOf('%');
-      if (parsedTweet[location + 1] === '2' && parsedTweet[location + 2] === '0') {
-        parsedTweet.splice(location, 3, " ")
-      }
-    }
-  });
-  
-  parsedTweet = parsedTweet.join('');
-  return parsedTweet;
-}
 
 //Creates the markup for the tweet
 const createTweetElement = function (tweetData) {
@@ -42,10 +27,10 @@ const createTweetElement = function (tweetData) {
 
 //Loops through the database to and passes each to createTweetElement
 const renderTweets = function (data) {
-  // const $tweetContainer = $('.tweet-container');
-  // $tweetContainer.empty();
+  const $tweetContainer = $('.tweet-container');
+  $tweetContainer.empty();
   for (const user of data) {
-    $('.tweet-container').prepend(createTweetElement(user));
+    $tweetContainer.prepend(createTweetElement(user));
   }
 };
 
@@ -80,12 +65,13 @@ $(document).ready(function() {
       error.style.display = "block";
     }
     if ($userTweet.val().length <= 140 && $userTweet.val().length > 0) {
-      submission = parser(submission);
+      console.log(submission);
       error.style.display = "none";
       $.ajax({
       url: "/tweets",
       method: "POST",
-      data: {text: submission}
+      data: {text: submission},
+      dataType: "text"
       }).then(() => {
         loadTweets();
         error.style.display = "none";
