@@ -1,4 +1,4 @@
-.head {
+.profile {
   color: #ffffff;
   background-color: #b58b00c0;
   background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
@@ -9,4 +9,25 @@
   justify-content: center;
   align-items: center;
   position: relative; top: 120px;
+  padding-top: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .profile {
+    width: 33%;
+    height: 400px;
+    margin-left: 50px;
+    margin-right: 0px;
+    margin-top: 50px;
+  }
+
+  .avatar {
+    padding-top: 50px;
+    margin-bottom: 0px;
+  }
+
+  .name {
+    margin-top: -5px;
+  }
 }

@@ -3,10 +3,16 @@
 * jQuery is already loaded
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
-
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 //Creates the markup for the tweet
 const createTweetElement = function (tweetData) {
+  const safeHTML = `<p class='tweet-text'>${escape(tweetData.content.text)}</p>`;
+  
   const tweetLayout = `
   <article class="article-tweet">
   <header>
@@ -16,7 +22,7 @@ const createTweetElement = function (tweetData) {
   </div>
   <a>${tweetData.user.handle}</a>
   </header> 
-  <p>${tweetData.content.text}</p>
+  ${safeHTML}
   <footer>
   <span>${tweetData.created_at}</span>
   <i>🏴  🔄  💙</i>

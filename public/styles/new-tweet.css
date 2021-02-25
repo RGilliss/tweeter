@@ -1,7 +1,6 @@
 .new-tweet {
   display:flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
   font-family: 'bungee';
 }
@@ -25,6 +24,10 @@
   margin-top: 10px;
 }
 
+.button:hover {
+  box-shadow: 0 0 11px grey;
+}
+
 #tweet-text {
   color: dimgrey;
   background-color: blanchedalmond;
@@ -36,7 +39,15 @@
 }
 
 .new-tweet small {
-  /* visibility: hidden; */
   background-color: red;
   color: white;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 100%;
+    margin-top: -425px;
+    margin-right: -800px
+  }
+  
 }
