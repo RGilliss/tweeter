@@ -24,7 +24,7 @@ const createTweetElement = function (tweetData) {
   </header> 
   ${safeHTML}
   <footer>
-  <span>${tweetData.created_at}</span>
+  <span>${moment(tweetData.created_at).fromNow()}</span>
   <i>🏴  🔄  💙</i>
   </footer>
   </article>`;
