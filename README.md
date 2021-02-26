@@ -20,3 +20,6 @@ This repository is the starter code for the project: Students will fork and clon
 - md5
 - Moment
 
+## Screenshots
+!["Screenshot of Tweeter desktop design"](https://github.com/RGilliss/tweeter/blob/master/docs/Tweeter-desktop.png?raw=true)
+!["Screenshot of Tweeter mobile design"](https://github.com/RGilliss/tweeter/blob/master/docs/Tweeter-tablet-mobile%20.png?raw=true)
